@@ -13,7 +13,6 @@ export default function Youtube() {
     'UCImXkTVk9fLXAuPciWBOiXA',
   ];
 
-  const channelId = 'UCImXkTVk9fLXAuPciWBOiXA'; // Replace with your actual channel ID
   const apiKey = 'AIzaSyD8a38JCJAdkCTIv0lW-iJaPA2A9rj-FLk'; // Replace with your API key
   const partCase = 'snippet,contentDetails,statistics';
   //   const url = `https://www.googleapis.com/youtube/v3/channels?id=${channelId}&key=${apiKey}&part=${partCase}`;
