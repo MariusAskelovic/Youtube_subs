@@ -9,10 +9,10 @@ export default function AddYTChannel() {
     initialValues: {
       channelId: '',
     },
-    onSubmit: (values) => {
+    onSubmit: async (values, { resetForm }) => {
       console.log(values);
       addData();
-      formik.values.channelId = '';
+      resetForm();
     },
   });
   async function addData() {
@@ -47,4 +47,3 @@ export default function AddYTChannel() {
     </div>
   );
 }
-// UC_XwQjQkSEzp_m55-D2eJqA

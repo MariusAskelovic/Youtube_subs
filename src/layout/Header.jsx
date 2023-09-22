@@ -1,7 +1,19 @@
 import { Link, NavLink } from 'react-router-dom';
-import GoogleAuth from '../auth/GoogleAuth';
+import { getAuth, signOut } from 'firebase/auth';
+import { useAuth } from '../store/AuthProvider';
 
 export default function Header() {
+  function logout() {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        console.log('logged out');
+      })
+      .catch(() => {
+        console.log('logout error');
+      });
+  }
+  const ctx = useAuth();
   return (
     <header className='container flex justify-between items-center mx-auto p-2'>
       <Link to={'/'}>Logo</Link>
@@ -17,7 +29,21 @@ export default function Header() {
         <NavLink className='border-2 border-white p-2' to={'/youtube'}>
           Youtube
         </NavLink>
-        <GoogleAuth />
+        {!ctx.loginStatus && (
+          <NavLink className='border-2 border-white p-2' to={'/login'}>
+            Login
+          </NavLink>
+        )}
+        {!ctx.loginStatus && (
+          <NavLink className='border-2 border-white p-2' to={'/register'}>
+            Register
+          </NavLink>
+        )}
+        {ctx.loginStatus && (
+          <Link className='border-2 border-white p-2' to={'/'} onClick={logout}>
+            Logout
+          </Link>
+        )}
       </nav>
     </header>
   );
