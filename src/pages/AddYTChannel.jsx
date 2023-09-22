@@ -12,6 +12,7 @@ export default function AddYTChannel() {
     onSubmit: (values) => {
       console.log(values);
       addData();
+      formik.values.channelId = '';
     },
   });
   async function addData() {

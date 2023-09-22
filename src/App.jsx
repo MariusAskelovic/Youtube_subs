@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Header from './layout/Header';
-import Youtube from './pages/Youtube';
-import YTChannels from './pages/YTChannels';
+// import Youtube from './pages/Youtube';
+// import YTChannels from './pages/YTChannels';
 import AddYTChannel from './pages/AddYTChannel';
+import YoutubePage from './pages/YoutubePage';
 
 export default function App() {
   return (
@@ -11,9 +12,10 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/yt' element={<Youtube />} />
-        <Route path='/ytchannels' element={<YTChannels />} />
+        {/* <Route path='/yt' element={<Youtube />} />
+        <Route path='/ytchannels' element={<YTChannels />} /> */}
         <Route path='/addchannel' element={<AddYTChannel />} />
+        <Route path='/youtube' element={<YoutubePage />} />
       </Routes>
     </div>
   );

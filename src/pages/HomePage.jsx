@@ -23,7 +23,7 @@ export default function HomePage() {
       <h2 className='text-5xl text-center text-lime-300'>
         MA Youtube channels recommendations
       </h2>
-      <ul className='grid sm:grid-cols-2 lg:grid-cols-3 gap-7'>
+      <ul className='grid sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-8'>
         {dbData.map((cObj) => (
           <li key={cObj.id}>
             <h2>{cObj.channel}</h2>
