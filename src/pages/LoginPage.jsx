@@ -7,7 +7,7 @@ export default function LoginPage() {
       <h2 className='text-2xl'>Welcome to our page</h2>
       <h1 className='text-8xl pt-4 pb-7 text-neutral-100 font-bold '>Shops</h1>
       <p className='text-lg '>Login to enter</p>
-      <div className='flex flex-col md:flex-row justify-center gap-4 my-8'>
+      <div className='flex flex-col md:flex-row justify-center gap-4 my-8 relative'>
         <EmailAuth />
       </div>
       <div>

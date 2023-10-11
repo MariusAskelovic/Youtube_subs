@@ -41,6 +41,7 @@ export default function EmailAuth() {
           {formik.errors.email && formik.touched.email && (
             <p className='text-amber-400'>{formik.errors.email}</p>
           )}
+          <p className='text-xs text-left text-emerald-500'>james@bond.com</p>
         </div>
         <div className='mb-3'>
           <input
@@ -55,9 +56,15 @@ export default function EmailAuth() {
           {formik.errors.password && formik.touched.password && (
             <p className='text-amber-400'>{formik.errors.password}</p>
           )}
+          <p className='text-xs text-left text-emerald-500'>123456</p>
         </div>
       </div>
-      <button type='submit'>Login</button>
+      <button
+        type='submit'
+        className='border border-white px-3 py-[1px] rounded-sm text-black bg-white'
+      >
+        Login
+      </button>
     </form>
   );
 }

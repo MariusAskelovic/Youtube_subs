@@ -10,6 +10,7 @@ export default function YoutubePage() {
   const [isLoading, setIsLoading] = useState(true);
   const YOUTUBE_CHANNELS_API = 'https://www.googleapis.com/youtube/v3/channels';
   const apiKey = import.meta.env.VITE_GOOGLE_apiKey;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,7 +23,7 @@ export default function YoutubePage() {
     };
 
     fetchData();
-  }, []);
+  }, [ctx.userId]);
 
   async function getFSData() {
     try {

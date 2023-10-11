@@ -40,7 +40,11 @@ export default function Header() {
           </NavLink>
         )}
         {ctx.loginStatus && (
-          <Link className='border-2 border-white p-2' to={'/'} onClick={logout}>
+          <Link
+            className='border-2 border-white p-2'
+            to={'/login'}
+            onClick={logout}
+          >
             Logout
           </Link>
         )}

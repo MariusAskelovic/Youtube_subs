@@ -12,26 +12,37 @@ export default function RegisterPage() {
     },
     onSubmit: (values) => {
       console.log(values);
+      handleRegister(formik.values.email, formik.values.password);
     },
   });
-  useEffect(() => {
-    loginEmail();
-  }, []);
-  async function loginEmail() {
+  // async function loginEmail() {
+  //   const auth = getAuth();
+  //   createUserWithEmailAndPassword(
+  //     auth,
+  //     formik.values.email,
+  //     formik.values.password
+  //   )
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //       console.log('user ===', user);
+  //       navigate('/', { replace: true });
+  //     })
+  //     .catch(console.warn);
+  // }
+
+  function handleRegister(email, password) {
     const auth = getAuth();
-    createUserWithEmailAndPassword(
-      auth,
-      formik.values.email,
-      formik.values.password
-    )
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log('user ===', user);
+        const user = userCredential.user.email;
         navigate('/', { replace: true });
       })
-      .catch(console.warn);
+      .catch((error) => {
+        const errorCode = error.code;
+      });
   }
+
   return (
     <div className='container py-20'>
       <h3 className='text-black text-xl text-center mb-3'>
@@ -56,7 +67,12 @@ export default function RegisterPage() {
             value={formik.values.password}
           />
         </div>
-        <button type='submit'>Register</button>
+        <button
+          type='submit'
+          className='border border-white px-3 py-[1px] rounded-sm text-black bg-white'
+        >
+          Register
+        </button>
       </form>
     </div>
   );
