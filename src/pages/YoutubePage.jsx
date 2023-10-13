@@ -65,7 +65,7 @@ export default function YoutubePage() {
         </h2>
       )}
       {!isLoading && (
-        <ul className='grid lg:grid-cols-3 gap-5'>
+        <ul className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
           {playlistData.map((pObj) => {
             let subsCount = Number(pObj[0].statistics.subscriberCount);
             let subsCountShort =
